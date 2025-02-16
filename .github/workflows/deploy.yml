@@ -1,0 +1,48 @@
+name: Deploy MkDocs to Org Site
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the docs repo
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false   # We'll add our own credentials
+          fetch-depth: 0              # Ensure we have full history for gh-deploy
+
+      # Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      # Install MkDocs and any material themes or plugins
+      - name: Install MkDocs
+        run: |
+          pip install mkdocs
+          pip install mkdocs-material
+
+      # Configure Git to push to ComfyDock.github.io
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote add pages "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ComfyDock/ComfyDock.github.io.git"
+
+      # Deploy to the master branch of ComfyDock.github.io
+      - name: Deploy
+        run: |
+          mkdocs gh-deploy \
+            --force \
+            --config-file mkdocs.yml \
+            --remote-name pages \
+            --remote-branch master
