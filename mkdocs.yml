@@ -1,1 +1,27 @@
 site_name: ComfyDock Docs
+repo_url: https://github.com/ComfyDock/ComfyDock-Docs
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage:
+    - Usage Overview: usage.md
+    - Working with Environments: environments.md
+    - Sharing Images: sharing_images.md
+  - Troubleshooting:
+    - Common Issues: troubleshooting/common_issues.md
+    - Give WSL More RAM: troubleshooting/add_more_ram_to_wsl.md
+    - Filepath & Permissions Issues: troubleshooting/filepath_permissions.md
+    - Installing Custom Nodes Manually: troubleshooting/installing_custom_nodes_manually.md
+    - Edit Files in the Container: troubleshooting/edit_files_in_container.md
+  - About the Author: about_author.md
+
+theme:
+  name: material
+  logo: assets/comfy_env_manager-min.png
+  favicon: assets/comfy_env_manager-min.png
+markdown_extensions:
+  - attr_list
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
