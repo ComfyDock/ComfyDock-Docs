@@ -40,4 +40,4 @@ jobs:
             --force \
             --config-file mkdocs.yml \
             --remote-name pages \
-            --remote-branch master
+            --remote-branch main
