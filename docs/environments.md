@@ -127,7 +127,3 @@ There are a couple of ways to add an environment to a folder:
     1. You can manually specify which folder an environment should belong in with the **Folder** dropdown in settings. Click “Update” once selected to save the changes.
 ---
 
-## Backing Up and Sharing via Dockerhub
-
-For instructions, see:
-[Environment Sharing Using DockerHub](https://www.notion.so/Environment-Sharing-Using-DockerHub-15bfd5b1ca3b80019981e80a8ac342dc)
