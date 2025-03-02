@@ -62,15 +62,7 @@ ComfyDock has two main sections:
 
 ---
 
-## **Advanced Options**
-
-![Advanced Options Screenshot](assets/advancedOptions.png)
-
-- **Runtime**: `NVIDIA` for GPU or `None` for CPU.
-- **Command**: Extra flags for the ComfyUI startup command, e.g. `--fast` or `--lowvram`.
-- **Port**: The web UI port.
-
-### **Mount Config**
+## **Mount Config**
 
 The Mount Config panel now provides granular control over how host directories interact with container paths, with four configurable columns per row:
 
@@ -124,5 +116,15 @@ The Mount Config panel now provides granular control over how host directories i
 - Copied directories become container-only - changes in host won't affect them
 - Mounted custom_nodes directories trigger automatic dependency installation
 - Read-only mounts (available via advanced settings) prevent accidental container modifications
+
+---
+
+## **Advanced Options**
+
+![Advanced Options Screenshot](assets/advancedOptions.png)
+
+- **Runtime**: `NVIDIA` for GPU or `None` for CPU.
+- **Command**: Extra flags for the ComfyUI startup command, e.g. `--fast` or `--lowvram`.
+- **Port**: The web UI port.
 
 ---
