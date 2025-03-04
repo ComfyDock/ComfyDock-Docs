@@ -37,7 +37,7 @@ memory=4GB        # Limits WSL to 4GB of RAM (adjust as needed)
 processors=4       # Grants WSL 4 CPU cores (adjust as needed)
 ```
 
-- **`memory=4GB`**: Replace `4GB` with the amount of RAM you want to allocate (e.g., `8GB`, `2GB`).
+- **`memory=4GB`**: Replace `4GB` with the amount of RAM you want to allocate (e.g., `8GB`, `64GB`).
 - **`processors=4`**: Replace `4` with the number of CPU cores you want to allocate (e.g., `2`, `6`).
 
 ---

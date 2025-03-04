@@ -40,13 +40,8 @@ ComfyDock has two main sections:
 ![Create Environment](assets/createEnvironmentDialog.png)
 2. Fill out fields:
     - **Name**: Any text (emojis allowed).
-    - **ComfyUI Release**: Specific version or “latest”.
-        - Releases are based on versions of ComfyUI I have packaged into an image, not the “latest” actual comfyui release.
-        - Pick “latest” to grab whatever the most recent image is, otherwise you can specify an older version.
-        - See the list of available images on [dockerhub](https://hub.docker.com/repository/docker/akatzai/comfyui-env/general)
-        - If you want to build the dockerfiles locally, you can download the files from the [docker repo here](https://github.com/ComfyDock/ComfyDock-Docker)
-        - Local-built images can be specified by tag in the “Custom Docker Image” field.
-    - **Custom Docker Image**: Optional Docker image URL.
+    - **Docker Image**: Pick a ComfyUI base image from Docker Hub, an image installed locally, or a custom image url using the dialog.
+        - See the [Docker Images](#docker-images) section below for more details.
     - **Path to ComfyUI**: A valid directory on your host machine.
         - This can be any valid path to a directory on your host machine that you have write and read permissions to:
         - e.g. “C:\Users\akatz\my\path\to\ComfyUI”
@@ -59,6 +54,40 @@ ComfyDock has two main sections:
     - You can see how changing the Environment Type directly affects the Mount Config by expanding the Advanced Settings tab.
 4. Click **Create**.
 > **Note**: If you have not yet downloaded the selected ComfyUI release image, then you will be prompted to download it on create.
+
+---
+
+## **Docker Images**
+
+### **Browsing Docker Hub Images**
+
+![Docker Select Dockerhub](assets/dockerSelectBrowse.png)
+
+When you first open the Docker Image dialog, you will be presented with a list of image tags available on Docker Hub. These images are custom ComfyUI base images that I have created for this tool. You can see the dockerfile and workflow used to build these images [here](https://github.com/ComfyDock/ComfyDock-Docker). See the list of available images on [dockerhub](https://hub.docker.com/repository/docker/akatzai/comfydock-env/general).
+The tag format is as follows:
+```
+<comfyui-release>-py<python-version>-cu<cuda-version>-pt<pytorch-version>
+```
+You can choose options in the separate dropdowns to filter the images by ComfyUI release, Python version, and CUDA version. You can also search for a specific image by name.
+Images that you have already downloaded will be shown in the list with a green "Installed" badge.
+
+> **Note**: If you have not yet downloaded the selected image, then you will be prompted to download it on create.
+
+### **Using Local Images**
+
+![Docker Select Installed](assets/dockerSelectInstalled.png)
+
+If you have a local image already downloaded, you can select it by tag in the “Installed” tab. This list will show all images you currently have available on your machine.
+
+### **Using Custom Images**
+
+![Docker Select Custom](assets/dockerSelectCustom.png)
+
+If you have a custom image you want to use, you can specify it by tag in the “Custom" tab. This input expects a full Docker Hub image tag string:<br/>
+e.g. `akatzai/comfydock-env:v2.6.0-py3.12-cu12.1-ptstable`.
+
+> **Note**: Currently only custom images from Docker Hub are supported.
+
 
 ---
 
