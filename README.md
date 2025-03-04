@@ -2,6 +2,12 @@
 
 This repository contains the documentation for ComfyDock.
 
+Install the tool using uv:
+
+```bash
+uv tool install mkdocs --with mkdocs_material
+```
+
 Run `mkdocs serve` to view the documentation locally.
 
 Run `mkdocs build` to build the documentation.
