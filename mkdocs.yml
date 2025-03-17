@@ -7,12 +7,14 @@ nav:
     - Usage Overview: usage.md
     - Working with Environments: environments.md
     - Sharing Images: sharing_images.md
+  - Best Practices: best_practices.md
   - Troubleshooting:
-    - Common Issues: troubleshooting/common_issues.md
+    - Slow Model Loading: troubleshooting/slow_model_loading.md
+    - Edit Files in the Container: troubleshooting/edit_files_in_container.md
     - Give WSL More RAM: troubleshooting/add_more_ram_to_wsl.md
     - Filepath & Permissions Issues: troubleshooting/filepath_permissions.md
     - Installing Custom Nodes Manually: troubleshooting/installing_custom_nodes_manually.md
-    - Edit Files in the Container: troubleshooting/edit_files_in_container.md
+    - Other Issues: troubleshooting/other.md
   - About the Author: about_author.md
 
 theme:
